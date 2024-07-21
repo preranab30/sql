@@ -1,0 +1,53 @@
+sql 
+ddl to create and manage the structure of the database
+create--cmd database----keyword
+
+ALTER 1)ADD NEW Col TO EXISTING TABLE
+2) remove col from exsting table
+3.rename the col name
+4 chnge the datatype of the col
+
+select only read/fetch the data from table
+*:all cols from the table.
+from :calause
+table-name
+SELECT * FROM products;
+
+//syntax for adding column to existing table
+ALTER TABLE table_name ADD COLUMN col_name datatype;
+
+ALTER TABLE product ADD COLUMN p_brand varchar(10);
+
+Remove:
+REMOVE TABLE table_name DROP COLUMN col_name;
+
+rename the col name
+ALTER TABLE table_name RENAME COLUMN column_name TO new _column_name;
+
+change the data
+ALTER TABLE table_name MODIFY COLUMN column_name datatype;
+
+alter table table name CHANGE CLOUMN OLD
+
+DROP DATBASE database_name;
+if we drop it never ever re
+
+
+TRUNCATE:ONLY TABLE
+TRUNCATE TABLE table_name;
+
+
+DDL : CREATE , ALTER,DROP,TRUNCATE
+DML :DATA MANIPULATION LANGUAGE
+CREATE MODFY DATA INSIDE THE TABLE
+1)INSERT: 
+//syntax for insert into table
+INSERT INTO table_name values(data1,data2...);
+
+INSERT INTO table_name(column_name,col_name,) values(data1,data2..);
+
+INSERT INTO table _name(data1,data2..),(data1,data2,...);
+BATCH insert transaction at one time
+
+
+

@@ -1,0 +1,31 @@
+CREATE DATABASE structure;
+use structure;
+CREATE TABLE movie(id int, m_name varchar(10),m_rating int,m_quality varchar(10),m_budget bigint);
+ALTER TABLE movie ADD COLUMN movie_hero varchar(10);
+ALTER TABLE movie ADD COLUMN movie_heroine varchar(10);
+ALTER TABLE movie ADD COLUMN no_of_actors int;
+ALTER TABLE movie ADD COLUMN no_of_song_inmovie int;
+ALTER TABLE movie ADD COLUMN hero_salary bigint;
+ALTER TABLE movie ADD COLUMN heroin_salary bigint;
+ALTER TABLE movie ADD COLUMN isavailable boolean;
+SELECT * FROM movie;
+desc movie;
+ALTER TABLE movie RENAME COLUMN m_name TO movie_name;
+ALTER TABLE movie RENAME COLUMN m_rating TO movie_rating;
+ALTER TABLE movie RENAME COLUMN m_quality TO movie_quality;
+ALTER TABLE movie RENAME COLUMN m_budget TO movie_budget;
+ALTER TABLE movie RENAME COLUMN hero_salary TO Hero_salary;
+INSERT INTO movie VALUES(100,'MungaruMal',5,'Good',200000000000,'Pooja G',10,3,38000000,20000000,true,'Ganesh');
+INSERT INTO movie VALUES(101,'Lucia',5,'Good',400000000000,'Sruthi',10,3,38000000,20000000,true,'Sathish ');
+INSERT INTO movie VALUES(102,'KirikParty',5,'Good',500000000000,'Rashmika',10,3,38000000,20000000,true,'Rakshit');
+INSERT INTO movie VALUES(103,'KGF',5,'Good',200000000000,'Srinidhi S',10,3,38000000,20000000,true,'yash');
+INSERT INTO movie VALUES(104,'Dia',5,'Good',200000000000,'Kushi',10,3,38000000,20000000,true,'Pruthvi');
+INSERT INTO movie VALUES(105,'milana',5,'Good',600000000000,'priya',10,3,38000000,20000000,true,'puneeta');
+INSERT INTO movie VALUES(106,'paramatma',5,'Good',600000000000,'deepa',10,3,38000000,20000000,true,'punneta');
+INSERT INTO movie VALUES(107,'ramachari',5,'Good',700000000000,'malashree',10,3,38000000,20000000,true,'ravichandr');
+INSERT INTO movie VALUES(108,'googly',5,'Good',500000000000,'kriti',10,3,38000000,20000000,true,'yasha');
+INSERT INTO movie VALUES(109,'drama',5,'Good',400000000000,'radhika',10,3,38000000,20000000,true,'yasha');
+select * from movie;
+
+UPDATE  movie SET  movie_quality='medium' where id=100;
+

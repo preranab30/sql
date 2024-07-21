@@ -1,0 +1,98 @@
+CREATE DATABASE structure1;
+use structure1;
+CREATE TABLE movie(id int, m_name varchar(20),m_rating int,m_quality varchar(20),m_budget bigint);
+ALTER TABLE movie ADD COLUMN movie_hero varchar(20);
+ALTER TABLE movie ADD COLUMN movie_heroine varchar(20);
+ALTER TABLE movie ADD COLUMN no_of_actors int;
+ALTER TABLE movie ADD COLUMN no_of_song_inmovie int;
+ALTER TABLE movie ADD COLUMN hero_salary bigint;
+ALTER TABLE movie ADD COLUMN heroin_salary bigint;
+ALTER TABLE movie ADD COLUMN isavailable boolean;
+select * from movie;
+ALTER TABLE movie RENAME COLUMN m_name TO movie_name;
+ALTER TABLE movie RENAME COLUMN m_rating TO movie_rating;
+ALTER TABLE movie RENAME COLUMN m_quality TO movie_quality;
+ALTER TABLE movie RENAME COLUMN m_budget TO movie_budget;
+ALTER TABLE movie RENAME COLUMN hero_salary TO Hero_salary;
+INSERT INTO movie VALUES(100,'Mungaru Male',5,'Good',260000000000,'Ganesh','Pooja Gandhi',10,3,3800000000,87800000,true);
+INSERT INTO movie VALUES(101,'Lucia',3,'medium',400000000000,'Sathish ','Sruthi',9,4,48700000,567899999,true);
+INSERT INTO movie VALUES(102,'KirikParty',4,'Good',500000000000,'Rakshit','Rashmika',7,5,88000000,89780000,true);
+INSERT INTO movie VALUES(103,'KGF',2,'medium',800000000000,'yash','Srinidhi S',10,6,78000000,27680000,false);
+INSERT INTO movie VALUES(104,'Dia',3,'Good',5600000000000,'Pruthvi','Kushi',5,3,38000000,75600000,true);
+INSERT INTO movie VALUES(105,'milana',5,'Good',680000000000,'puneeta','priya',9,4,38000000,450000000,true);
+INSERT INTO movie VALUES(106,'paramatma',2,'bad',6890000000000,'punneta','deepa',8,2,38000000,670000000,false);
+INSERT INTO movie VALUES(107,'ramachari',3,'medium',700000000000,'ravichandr','malashree',6,4,8976000000,20000000,true);
+INSERT INTO movie VALUES(108,'googly',5,'Good',556700000000,'yasha','kriti',9,5,38000000,265470000,true);
+INSERT INTO movie VALUES(109,'drama',4,'medium',467800000000,'yasha','radhika',10,2,38000000,200700000,true);
+
+UPDATE  movie SET  movie_quality='medium' where id=104;
+update movie set movie_budget=47800000000000 where movie_name='KGF'; 
+update movie set no_of_song_inmovie=2 where movie_name='Lucia'; 
+update movie set isavailable=false where movie_name='drama'; 
+update movie set movie_rating=4 where movie_name='Dia'; 
+update movie set movie_rating=3 where movie_name='googly'; 
+update movie set movie_quality='bad' where movie_name='drama'; 
+update movie set no_of_actors=7 where movie_name='parmatma'; 
+update movie set no_of_actors=8 where movie_name='Dia'; 
+update movie set no_of_song_inmovie=5 where id=109; 
+select * from movie;
+
+DELETE FROM movie where movie_hero='ravichandr'; 
+DELETE FROM movie where movie_name='Lucia'; 
+DELETE FROM movie where movie_heroine='priya';
+
+select * from movie where id=109;
+select * from movie where movie_name='KGF' AND id=103;
+select * from movie where movie_hero='yash' OR movie_heroine='radhika';
+select * from movie where id in(100,102,103);
+select * from movie where id not in(100,102,103);
+select * from movie;
+
+CREATE TABLE bank(id int, b_name varchar(20),b_loc varchar(25),CustomerID int ,Customer_name varchar(25));
+ALTER TABLE bank ADD COLUMN AccountNumber varchar(10);
+ALTER TABLE bank ADD COLUMN Address varchar(10);
+ALTER TABLE bank ADD COLUMN Balance bigint;
+ALTER TABLE bank ADD COLUMN loan bigint;
+ALTER TABLE bank ADD COLUMN BranchID int;
+ALTER TABLE bank ADD COLUMN Branchcode int;
+select * from bank;
+ALTER TABLE bank RENAME COLUMN  b_name TO bank_name;
+ALTER TABLE bank RENAME COLUMN b_loc TO bank_loc;
+ALTER TABLE bank RENAME COLUMN id TO bank_id;
+ALTER TABLE bank RENAME COLUMN CustomerID TO customer_Id;
+ALTER TABLE bank RENAME COLUMN AccountNumber TO Account_number;
+
+INSERT INTO bank VALUES(1000,'SBI','BENGULUR',2000,'PRERANA','AC3956777','Bidar',100000000000,3000000,401,2345);
+INSERT INTO bank VALUES(1001,'Bank of Prosperity','HUBALI',2001,'SARIKA','AC3956757','gulberga',230000000000,6000000,402,2355);
+INSERT INTO bank VALUES(1002,'HDFC','BELAGUM',2002,'PRATEEKSHA','AC3956677','Bijapura',165470000000,6000000,404,21345);
+INSERT INTO bank VALUES(1003,'Unity Bank','MYSURE',2003,'PREETI','AC3956767','Bidar',234500000000,3700000,404,2345);
+INSERT INTO bank VALUES(1004,'Liberty Bank','BIDAR',2004,'PRIYA','AC3956776','Gujurata',654000000000,98000000,405,2344);
+INSERT INTO bank VALUES(1005,'KGB','GULBERGA',2005,'POOJA','AC3956787','Dehli',456000000000,30090000,406,2345);
+INSERT INTO bank VALUES(1006,'HSBC','London',2006,'RAKSHITA','AC3956797','maharastra',100765000000,2000000,407,2545);
+INSERT INTO bank VALUES(1007,'UBS','BENGULUR',2007,'JYOTI','AC3956757','mumbai',1065400000,5400000,408,2345);
+INSERT INTO bank VALUES(1008,'Citibank','BENGULUR',2008,'MEGHA','AC3956477','hariyana',876500000000,6700000,409,2345);
+INSERT INTO bank VALUES(1009,'Bank of America','BAGALAKOTA',2009,'PRIYANKA','AC395977','Bijapura',108000000000,38700000,405,2365);
+INSERT INTO bank VALUES(2000,'SBI','BENGULUR',3000,'PRERANAb','AC3956773','Bihara',987654000000,87600000,404,2345);
+
+UPDATE  bank SET  bank_name='state bank' where Bank_id=1000;
+UPDATE  bank SET  Customer_name='pallavi' where Bank_id=1002;
+UPDATE  bank SET  BranchID='4001' where Branchcode=2345;
+UPDATE  bank SET  Address='Gulberga' where Customer_name='PREETI';
+UPDATE  bank SET  bank_name='KGB' where Customer_name='RAKSHITA';
+UPDATE  bank SET  bank_name='KGB' where Customer_name='PREETI';
+UPDATE  bank SET  Address='gulberga' where Customer_name='PRERANA';
+UPDATE  bank SET  bank_name='HDFC' where Address='Bihara';
+UPDATE  bank SET  BranchID=403 where Customer_name='PREETI';
+UPDATE  bank SET  bank_name='state bank' where BranchID=407;
+select * from bank;
+ DELETE FROM bank where bank_loc='HUBALI';
+ DELETE FROM bank where BranchID=4001;
+ DELETE FROM bank where Account_Number='AC395977';
+ 
+ select * from bank where bank_id=1006; 
+ select * from bank where Customer_Id=2002 AND bank_id=1002;
+ select * from bank where Customer_Id=2004 OR bank_loc='HUBALI';
+ select * from bank where bank_id in(1002,1003,1004);
+ select * from bank where bank_id not in(1002,1003,1004);
+ select * from bank;
+
